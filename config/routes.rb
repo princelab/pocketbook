@@ -1,4 +1,8 @@
 Pocketbook::Application.routes.draw do
+  get "raw_data_sets/new"
+
+  get "raw_data_sets/download"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
