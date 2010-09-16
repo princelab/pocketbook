@@ -1,6 +1,8 @@
 Pocketbook::Application.routes.draw do
-  get "raw_data_sets/new"
+  get "pages/home"
 
+  resource :raw_data_sets
+  
   get "raw_data_sets/download"
 
   # The priority is based upon order of creation:
@@ -59,4 +61,5 @@ Pocketbook::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  root :to => "pages#home"
 end

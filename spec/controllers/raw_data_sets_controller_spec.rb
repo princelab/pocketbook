@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe RawDataSetsController do
+  render_views
 
   describe "GET 'download'" do
     it "should be successful" do
@@ -10,9 +11,9 @@ describe RawDataSetsController do
   end
 
   describe "GET 'new'" do
-    it "should be successful" do
+    it "should return a form for creating a new RawDataSet" do
       get 'new'
-      response.should be_success
+      response.should have_selector("form", :id => "new_raw_data_set")
     end
   end
 

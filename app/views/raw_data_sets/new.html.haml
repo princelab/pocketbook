@@ -1,2 +1,16 @@
 %h1 RawDataSets#new
-%p Find me in app/views/raw_data_sets/new.html.haml
+= form_for(@raw_data_set) do |f|
+  = f.label :mass_spec_type, 'Mass Spec Type'
+  = f.text_field :mass_spec_type
+  %br
+  = f.label :organism_name, "Organism Name"
+  = f.text_field :organism_name
+  %br
+  = f.label :spectra_type, "Spectra Type"
+  = f.text_field :spectra_type
+  %br
+  = f.label :solvents, "Solvents Used"
+  = f.text_field :solvents
+  %br
+
+
