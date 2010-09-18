@@ -7,7 +7,7 @@ class RawDataSetsController < ApplicationController
   end
 
   def index
-    @raw_data_sets = RawDataSet.all
+    @raw_data_sets = RawDataSet.find(:all)
   end
 
   def download

@@ -1,5 +1,6 @@
 Pocketbook::Application.routes.draw do
-  get "pages/home"
+
+  match "about" => "pages#about"
 
   resources :raw_data_sets
   

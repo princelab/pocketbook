@@ -1,12 +1,15 @@
 %h3 INDEX
 %table#index
   %tr
+    %th Raw Data Set
     %th Organism Name
     %th Mass Spec Type
     %th Spectra Type
     %th Solvent Used
+    %th Number of Data sets is #{@raw_data_sets.count}
   - @raw_data_sets.each do |raw_data_set|
     %tr
+      %td #{link_to("#{raw_data_set._id}", raw_data_set)}
       %td #{raw_data_set.organism_name}
       %td #{raw_data_set.mass_spec_type}
       %td #{raw_data_set.spectra_type}

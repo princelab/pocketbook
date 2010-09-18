@@ -25,6 +25,10 @@ describe RawDataSetsController do
       get :index
       response.should be_success
     end
+
+    it "should find the correct number of raw data sets" do
+      get :index
+    end
   end
 
   describe "GET 'new'" do
