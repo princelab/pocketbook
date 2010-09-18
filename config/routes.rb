@@ -1,7 +1,7 @@
 Pocketbook::Application.routes.draw do
   get "pages/home"
 
-  resource :raw_data_sets
+  resources :raw_data_sets
   
   get "raw_data_sets/download"
 

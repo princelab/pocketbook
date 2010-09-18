@@ -4,7 +4,7 @@ gem 'rails', '3.0.0'
 
 gem 'haml-rails'
 gem 'mongoid', '>=2.0.0.beta.17'
-gem 'bson_ext'
+gem 'bson_ext', '1.0.4'
 
 group 'development', 'test' do
   gem 'rspec-rails'
