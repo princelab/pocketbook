@@ -9,7 +9,7 @@ describe RawDataSetsController do
 
   describe "GET 'download'" do
     it "should be successful" do
-      get :download
+      get :download, :id => @valid_raw._id
       response.should be_success
     end
   end

@@ -1,9 +1,9 @@
 class RawDataSetsController < ApplicationController
-  
 
   def show
     @title = "GET!"
     @raw_data_set = RawDataSet.find(params[:id])
+    #should the view really know the names of the fields?
   end
 
   def index
@@ -11,6 +11,8 @@ class RawDataSetsController < ApplicationController
   end
 
   def download
+    #todo: implement real file download
+    send_file("#{Rails.root}/public/404.html")
   end
 
   def new
@@ -26,6 +28,5 @@ class RawDataSetsController < ApplicationController
       render "new"
     end
   end
-
 
 end
