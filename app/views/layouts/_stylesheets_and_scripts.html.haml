@@ -1,8 +1,4 @@
-= stylesheet_link_tag "blueprint/screen.css", :cache => "head"
-= stylesheet_link_tag "blueprint/print.css", :media => "print", :cache => "head"
-/[if lt IE 8]
-  = stylesheet_link_tag "blueprint/ie.css", :cache => "head"
-  %script{:src => "http://html5shiv.googlecode.com/svn/trunk/html5.js"}   
+= stylesheet_link_tag "compiled/application.css", :cache => "head"
 
 = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
 = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"

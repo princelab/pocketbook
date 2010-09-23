@@ -5,8 +5,9 @@
     = title
   = render :partial => "layouts/stylesheets_and_scripts"
   = csrf_meta_tag
-#page
-  = render :partial => "layouts/header"
-  #content
-    = yield
-  = render :partial => "layouts/footer"
+%body
+  #page
+    = render :partial => "layouts/header"
+    #content
+      = yield
+    = render :partial => "layouts/footer"
