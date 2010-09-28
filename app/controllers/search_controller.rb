@@ -7,8 +7,8 @@ class SearchController < ApplicationController
     @mass_spec_types = RawDataSet.only(:mass_spec_type)
     @spec_type = RawDataSet.only(:mass_spec_type)
 
-    unless params[:q].nil?
-      @results = "<h1>I am the walrus</h1>"
+    unless params[:organism_name].nil?
+      @raw_data_sets = RawDataSets.find(:all, :conditions => { :organism_name => params[:organism_name] })
     end
   end
 
