@@ -3,6 +3,8 @@ require 'spec_helper'
 describe RawDataSetsController do
   render_views
 
+  include FilesystemHelpers
+
   before(:each) do
     @valid_raw = Factory(:valid_raw)
   end
@@ -12,6 +14,14 @@ describe RawDataSetsController do
       get :download, :id => @valid_raw._id
       response.should be_success
     end
+
+    it "should download a file successfully from tranche to the local cache" do
+
+    end
+
+  end
+
+  describe "'download' helper methods" do
   end
 
   describe "GET 'show'" do

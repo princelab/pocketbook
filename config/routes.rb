@@ -1,7 +1,8 @@
 Pocketbook::Application.routes.draw do
   resources :raw_data_sets
   match "search" => "search#search"
-  match "about" => "pages#about"
+  get "about" => "pages#about"
+  #todo: make sure the id is a valid one
   match "raw_data_sets/:id/download" => "raw_data_sets#download"
 
   # The priority is based upon order of creation:

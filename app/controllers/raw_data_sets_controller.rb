@@ -1,9 +1,17 @@
 class RawDataSetsController < ApplicationController
 
+  include FilesystemHelpers
+  include TrancheHelpers
+
   def show
     @title = "GET!"
     @raw_data_set = RawDataSet.find(params[:id])
-    #should the view really know the names of the fields?
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @raw_data_set.to_json }
+      format.xml { render :xml => @raw_data_set.to_xml }
+    end
   end
 
   def index
@@ -11,8 +19,13 @@ class RawDataSetsController < ApplicationController
   end
 
   def download
-    #todo: implement real file download
-    send_file("#{Rails.root}/public/404.html")
+    #TODO: is this a valid tranche_hash?
+
+    #TODO: Give them a progress bar while we are downloading
+    # from Tranche, and then start the download normally.
+
+    #TODO: change to send_data, more secure that way.
+    send_file(download_file_from_tranche(params[:tranche_hash]))
   end
 
   def new
@@ -28,5 +41,4 @@ class RawDataSetsController < ApplicationController
       render "new"
     end
   end
-
 end
